@@ -147,7 +147,12 @@ void readMaterials(GLfloat materials[])
 void reader()
 {
 	char c;
-	f = fopen("./util/scene.obj","r");
+	f = fopen("scene.obj","r");
+	if(f == NULL) {
+	    cout << "fopen failed" << endl;
+        exit(1);
+	}
+
 	int b = 0;
 	vIndex = 0;
 	vnIndex = 0;
@@ -166,8 +171,6 @@ void reader()
         picked_x_mid[r] = 0;
         picked_y_mid[r] = 0;
     }
-
-
 
 	c = fgetc(f);
 
@@ -304,7 +307,6 @@ void mouseMotion(int x, int y)
             }
         
         if (mouse_middle) {
-            
             delta_x = (mid_global_rotate_x_diff  - x);
             delta_y = (mid_global_rotate_y_diff - y);
 
