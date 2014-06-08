@@ -147,7 +147,7 @@ void readMaterials(GLfloat materials[])
 void reader()
 {
 	char c;
-	f = fopen("scene.obj","r");
+	f = fopen("simple.obj","r");
 	if(f == NULL) {
 	    cout << "fopen failed" << endl;
         exit(1);
